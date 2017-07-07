@@ -1,0 +1,38 @@
+
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <script src="assets/js/script.js"></script>
+  <script>
+  document.write(document.cookie)
+  </script>
+  <script src="assets/js/long-execution-script.js"></script>
+  <title>External CSS Link</title>
+</head>
+<body>
+  <p>Hello <span>web performance</span> students!</p>
+  <div><img src="assets/images/awesome-photo.jpg"></div>
+  <script>
+  window.onbeforeunload = function () {
+    alert('before')
+    var now = Date.now()
+    setCookie('leave' + now, new Date().toLocaleString())
+    return '345'
+  }
+  window.onunload = document.unload = function () {
+    alert("unload")
+    return '123'
+  }
+  </script>
+</body>
+</html>
+
+<!--
+dynamic css will load last, bacause
+
+external css in link would be trigger download at HTML parsing moment,
+all external links include the bottom image link, would be trigger at the very moment of HTML parsing
+but dynamic css would trigger by script execution, which is done a while after HTML started parsing
+-->

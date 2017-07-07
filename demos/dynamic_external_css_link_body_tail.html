@@ -1,0 +1,19 @@
+
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>External CSS Link</title>
+</head>
+<body>
+  <p>Hello <span>web performance</span> students!</p>
+  <div><img src="assets/images/awesome-photo.jpg"></div>
+  <script>
+  var link = document.createElement('link')
+  link.rel = 'stylesheet'
+  link.href = 'assets/css/style.css'
+  document.head.appendChild(link)
+  </script>
+</body>
+</html>

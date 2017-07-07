@@ -1,0 +1,29 @@
+
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link href="assets/css/style3.css" rel="stylesheet">
+  <script>
+  var link = document.createElement('link')
+  link.rel = 'stylesheet'
+  link.href = 'assets/css/style.css'
+  document.head.appendChild(link)
+  </script>
+  <link href="assets/css/style2.css" rel="stylesheet">
+  <title>External CSS Link</title>
+</head>
+<body>
+  <p>Hello <span>web performance</span> students!</p>
+  <div><img src="assets/images/awesome-photo.jpg"></div>
+</body>
+</html>
+
+<!--
+dynamic css will load last, bacause
+
+external css in link would be trigger download at HTML parsing moment,
+all external links include the bottom image link, would be trigger at the very moment of HTML parsing
+but dynamic css would trigger by script execution, which is done a while after HTML started parsing
+-->
